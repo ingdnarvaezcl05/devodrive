@@ -5,16 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevoDriver | Transporte Premium</title>
     
-    <!-- FAVICON PIN DORADO OFICIAL -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230B0B0B'/%3E%3Cg transform='translate(50,55)'%3E%3Cpath d='M0,-40 L0,-40 C-18,-40 -32,-24 -32,-6 C-32,16 0,40 0,40 C0,40 32,16 32,-6 C32,-24 18,-40 0,-40Z' fill='%23FFD700' stroke='%23B8860B' stroke-width='1.5'/%3E%3Ccircle cx='0' cy='-13' r='8' fill='%230B0B0B'/%3E%3Ctext x='0' y='-3' font-size='22' font-family='Arial' font-weight='bold' fill='%230B0B0B' text-anchor='middle' dominant-baseline='middle'%3EDD%3C/text%3E%3C/g%3E%3C/svg%3E">
-    <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230B0B0B'/%3E%3Cg transform='translate(50,55)'%3E%3Cpath d='M0,-40 L0,-40 C-18,-40 -32,-24 -32,-6 C-32,16 0,40 0,40 C0,40 32,16 32,-6 C32,-24 18,-40 0,-40Z' fill='%23FFD700' stroke='%23B8860B' stroke-width='1.5'/%3E%3Ccircle cx='0' cy='-13' r='8' fill='%230B0B0B'/%3E%3C/g%3E%3C/svg%3E" type="image/svg+xml">
+    <!-- ========== FAVICON OFICIAL - LOGOV2.ICO ========== -->
+    <link rel="icon" type="image/x-icon" href="logov2.ico">
+    <link rel="shortcut icon" href="logov2.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="logov2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logov2.png">
+    <link rel="apple-touch-icon" href="logov2.png">
+    <meta name="msapplication-TileImage" content="logov2.png">
     <meta name="theme-color" content="#0B0B0B">
+    <!-- ================================================= -->
     
-    <!-- FONTS & ICONS -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- ANIMACIONES AOS -->
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- AOS Animations -->
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     
     <style>
@@ -33,7 +43,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            cursor: none; /* OCULTAR CURSOR DEFAULT */
         }
         
         body {
@@ -43,29 +52,7 @@
             overflow-x: hidden;
         }
         
-        /* ========== CURSOR PERSONALIZADO ========== */
-        .custom-cursor {
-            width: 24px;
-            height: 24px;
-            border: 2px solid var(--dorado);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-            backdrop-filter: blur(2px);
-            mix-blend-mode: difference;
-        }
-        
-        .custom-cursor.hover {
-            transform: scale(1.8);
-            background: rgba(255, 215, 0, 0.15);
-            border: 2px solid var(--dorado-oscuro);
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
-        }
-        
-        /* ========== PARTÍCULAS PREMIUM ========== */
+        /* ========== PARTICULAS ANIMADAS ========== */
         .particles {
             position: fixed;
             top: 0;
@@ -77,30 +64,17 @@
                 radial-gradient(circle at 85% 65%, rgba(184,134,11,0.08) 0%, transparent 35%),
                 radial-gradient(circle at 45% 80%, rgba(255,215,0,0.06) 0%, transparent 40%),
                 radial-gradient(circle at 70% 30%, rgba(184,134,11,0.07) 0%, transparent 35%),
-                radial-gradient(circle at 90% 90%, rgba(255,215,0,0.05) 0%, transparent 25%),
-                radial-gradient(circle at 5% 50%, rgba(184,134,11,0.06) 0%, transparent 40%);
+                radial-gradient(circle at 90% 90%, rgba(255,215,0,0.05) 0%, transparent 25%);
             animation: particlesMove 40s cubic-bezier(0.4, 0, 0.2, 1) infinite;
             pointer-events: none;
             z-index: -1;
         }
         
         @keyframes particlesMove {
-            0%, 100% { 
-                transform: scale(1) rotate(0deg); 
-                opacity: 0.6;
-            }
-            25% { 
-                transform: scale(1.1) rotate(2deg); 
-                opacity: 0.8;
-            }
-            50% { 
-                transform: scale(0.95) rotate(-1deg); 
-                opacity: 0.7;
-            }
-            75% { 
-                transform: scale(1.05) rotate(1deg); 
-                opacity: 0.9;
-            }
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+            25% { transform: scale(1.1) rotate(2deg); opacity: 0.8; }
+            50% { transform: scale(0.95) rotate(-1deg); opacity: 0.7; }
+            75% { transform: scale(1.05) rotate(1deg); opacity: 0.9; }
         }
         
         /* ========== GLASSMORPHISM ========== */
@@ -145,81 +119,79 @@
                 inset -1px -1px 3px rgba(0,0,0,0.4);
         }
         
-        .btn-3d::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent,
-                rgba(255,255,255,0.2),
-                transparent
-            );
-            transform: rotate(45deg);
-            animation: btnShine 3s infinite;
-        }
-        
-        @keyframes btnShine {
-            0% { left: -50%; }
-            100% { left: 150%; }
-        }
-        
-        /* ========== NAVEGACIÓN GLASS ========== */
+        /* ========== Navegación ========== */
         nav {
-            background: rgba(11, 11, 11, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.25);
-        }
-        
-        /* ========== TARJETAS 3D ========== */
-        .service-card, .driver-card {
-            transform-style: preserve-3d;
-            transform: perspective(1000px);
-            background: rgba(26, 26, 26, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1.5px solid rgba(255, 215, 0, 0.25);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before, .driver-card::before {
-            content: '';
-            position: absolute;
+            position: fixed;
             top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 215, 0, 0.1),
-                transparent
-            );
-            transition: left 0.7s ease;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 11, 11, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            z-index: 1000;
         }
         
-        .service-card:hover::before, .driver-card:hover::before {
-            left: 100%;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
         
-        .service-card:hover, .driver-card:hover {
-            border-color: var(--dorado);
-            box-shadow: 
-                0 20px 40px rgba(0,0,0,0.5),
-                0 0 0 2px rgba(255,215,0,0.1),
-                0 0 30px rgba(255,215,0,0.2);
-            transform: perspective(1000px) translateY(-5px) rotateX(2deg) rotateY(2deg);
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
         }
         
-        /* ========== HERO CON VIDEO ========== */
+        .logo span {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--dorado), var(--dorado-oscuro));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-links a i {
+            color: var(--dorado);
+        }
+        
+        .nav-links a:hover {
+            color: var(--dorado);
+        }
+        
+        .btn-contacto {
+            background: linear-gradient(145deg, var(--dorado), var(--dorado-oscuro));
+            color: var(--negro) !important;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+        }
+        
+        /* ========== HERO SECTION ========== */
         .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
             position: relative;
             overflow: hidden;
         }
@@ -233,6 +205,13 @@
             z-index: 0;
         }
         
+        .hero-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5) saturate(1.3);
+        }
+        
         .hero-background::after {
             content: '';
             position: absolute;
@@ -243,596 +222,16 @@
             background: radial-gradient(circle at center, rgba(11,11,11,0.4) 0%, rgba(11,11,11,0.9) 100%);
         }
         
-        .hero-background video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.5) saturate(1.3) contrast(1.1);
-        }
-        
         .hero-content {
             position: relative;
             z-index: 2;
-        }
-        
-        /* ========== ESTADÍSTICAS ANIMADAS ========== */
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--dorado);
-            display: inline-block;
-            position: relative;
-        }
-        
-        .stat-number::after {
-            content: '+';
-            color: var(--dorado);
-        }
-        
-        /* ========== SCROLLBAR PERSONALIZADA ========== */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: var(--negro);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, var(--dorado), var(--dorado-oscuro));
-            border-radius: 5px;
-            border: 2px solid var(--negro);
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(45deg, var(--dorado-oscuro), var(--dorado));
-        }
-        
-        /* ========== ANIMACIONES DE ENTRADA ========== */
-        [data-aos] {
-            pointer-events: none;
-        }
-        
-        [data-aos].aos-animate {
-            pointer-events: auto;
-        }
-        
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 768px) {
-            .custom-cursor {
-                display: none;
-            }
-            * {
-                cursor: auto;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- CURSOR PERSONALIZADO -->
-    <div class="custom-cursor"></div>
-    
-    <!-- PARTÍCULAS ANIMADAS -->
-    <div class="particles"></div>
-    
-    <!-- NAVEGACIÓN -->
-    <nav>
-        <div class="logo">
-            <i class="fas fa-map-pin" style="color: var(--dorado); font-size: 2rem;"></i>
-            <span>DevoDriver</span>
-        </div>
-        <div class="nav-links">
-            <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
-            <a href="#servicios"><i class="fas fa-crown"></i> Servicios</a>
-            <a href="#conductores"><i class="fas fa-users"></i> Elite</a>
-            <a href="#viajes"><i class="fas fa-route"></i> Viajes</a>
-            <a href="#contacto" class="btn-3d" style="padding: 0.8rem 1.8rem;"><i class="fas fa-headset"></i> Contacto</a>
-        </div>
-    </nav>
-    
-    <!-- HERO CON VIDEO -->
-    <section id="inicio" class="hero">
-        <div class="hero-background">
-            <video autoplay muted loop playsinline>
-                <source src="https://player.vimeo.com/external/371837302.hd.mp4?s=236cae6e3b7b0851cf6b68eef43c1bb2d45b6c0a&profile_id=174" type="video/mp4">
-            </video>
-        </div>
-        
-        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-            <span class="hero-badge">
-                <i class="fas fa-bolt"></i> MOVILIDAD PREMIUM 24/7
-            </span>
-            <h1>
-                Conduce con <br>
-                <span>Estilo y <span class="glow-text">Elegancia</span></span>
-            </h1>
-            <p>
-                DevoDriver te ofrece la experiencia de transporte más exclusiva. 
-                Conductores elite, vehículos de lujo y un servicio que supera 
-                cualquier expectativa.
-            </p>
-            <div class="hero-stats">
-                <div class="stat-item" data-count="500">
-                    <span class="stat-number">0</span>
-                    <span class="stat-label">Conductores Elite</span>
-                </div>
-                <div class="stat-item" data-count="15000">
-                    <span class="stat-number">0</span>
-                    <span class="stat-label">Viajes Premium</span>
-                </div>
-                <div class="stat-item" data-count="99">
-                    <span class="stat-number">0</span>
-                    <span class="stat-label">% Satisfacción</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- SERVICIOS GLASS -->
-    <section id="servicios" class="services">
-        <div class="section-header" data-aos="fade-up">
-            <h2>Servicios <span>Black</span></h2>
-            <p>Experiencias exclusivas diseñadas para quienes exigen lo mejor</p>
-        </div>
-        
-        <div class="services-grid">
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-icon">
-                    <i class="fas fa-car-side"></i>
-                </div>
-                <h3>Viajes Black</h3>
-                <p>Traslados en vehículos de alta gama con conductores bilingües y asistencia personal.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check-circle"></i> Mercedes-Benz / BMW</li>
-                    <li><i class="fas fa-check-circle"></i> Conductor ejecutivo</li>
-                    <li><i class="fas fa-check-circle"></i> Amenidades a bordo</li>
-                </ul>
-            </div>
-            
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-icon">
-                    <i class="fas fa-briefcase"></i>
-                </div>
-                <h3>Corporativo</h3>
-                <p>Soluciones integrales para empresas con facturación automática y reportes ejecutivos.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check-circle"></i> Cuentas corporativas</li>
-                    <li><i class="fas fa-check-circle"></i> Facturación mensual</li>
-                    <li><i class="fas fa-check-circle"></i> Dashboard ejecutivo</li>
-                </ul>
-            </div>
-            
-            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-icon">
-                    <i class="fas fa-plane-departure"></i>
-                </div>
-                <h3>Aeropuerto VIP</h3>
-                <p>Traslados premium con monitoreo de vuelos y hasta 60 minutos de espera sin cargo.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check-circle"></i> Monitoreo en tiempo real</li>
-                    <li><i class="fas fa-check-circle"></i> Asistencia con equipaje</li>
-                    <li><i class="fas fa-check-circle"></i> Welcome kit</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CONDUCTORES ELITE -->
-    <section id="conductores" class="drivers">
-        <div class="section-header" data-aos="fade-up">
-            <h2>Conductores <span>Elite</span></h2>
-            <p>Los mejores profesionales, los vehículos más exclusivos</p>
-        </div>
-        
-        <div class="drivers-showcase">
-            <div class="driver-card" data-aos="zoom-in" data-aos-delay="100">
-                <div class="driver-avatar">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <h3>Alejandro Martínez</h3>
-                <div class="driver-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p style="color: var(--dorado);">Mercedes-Benz Clase S</p>
-                <div class="driver-stats">
-                    <div><span class="number">1,234</span> viajes</div>
-                    <div><span class="number">4.99</span> rating</div>
-                </div>
-            </div>
-            
-            <div class="driver-card" data-aos="zoom-in" data-aos-delay="200">
-                <div class="driver-avatar">
-                    <i class="fas fa-user-graduate"></i>
-                </div>
-                <h3>Carolina Rivas</h3>
-                <div class="driver-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p style="color: var(--dorado);">BMW Serie 7</p>
-                <div class="driver-stats">
-                    <div><span class="number">987</span> viajes</div>
-                    <div><span class="number">5.00</span> rating</div>
-                </div>
-            </div>
-            
-            <div class="driver-card" data-aos="zoom-in" data-aos-delay="300">
-                <div class="driver-avatar">
-                    <i class="fas fa-user-ninja"></i>
-                </div>
-                <h3>Roberto Sánchez</h3>
-                <div class="driver-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <p style="color: var(--dorado);">Audi A8 L</p>
-                <div class="driver-stats">
-                    <div><span class="number">1,567</span> viajes</div>
-                    <div><span class="number">4.98</span> rating</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CALCULADORA PREMIUM -->
-    <section id="viajes" class="trips">
-        <div class="section-header" data-aos="fade-up">
-            <h2>Calculadora <span>Black</span></h2>
-            <p>Presupuesto instantáneo para tu viaje</p>
-        </div>
-        
-        <div class="trip-calculator glass-card" data-aos="flip-up">
-            <div class="calculator-title">
-                <i class="fas fa-calculator"></i>
-                <h3>Simulador de Costos</h3>
-            </div>
-            
-            <div class="calculator-grid">
-                <div class="input-group">
-                    <label><i class="fas fa-map-pin"></i> Origen</label>
-                    <input type="text" id="origen" placeholder="Tu ubicación">
-                </div>
-                <div class="input-group">
-                    <label><i class="fas fa-map-marker-alt"></i> Destino</label>
-                    <input type="text" id="destino" placeholder="¿A dónde vas?">
-                </div>
-                <div class="input-group">
-                    <label><i class="fas fa-route"></i> Distancia (km)</label>
-                    <input type="number" id="distancia" placeholder="0.0" step="0.1">
-                </div>
-                <div class="input-group">
-                    <label><i class="fas fa-car"></i> Categoría</label>
-                    <select id="tipo-vehiculo">
-                        <option value="sedan">Black Sedán</option>
-                        <option value="suv">Black SUV</option>
-                        <option value="van">Black Van</option>
-                        <option value="sclass">Clase S / Serie 7</option>
-                    </select>
-                </div>
-            </div>
-            
-            <button class="btn-3d" onclick="calcularViaje()" style="width: 100%; padding: 1rem;">
-                <i class="fas fa-calculator"></i> Calcular Costo
-            </button>
-            
-            <div class="result-box" id="resultado-viaje">
-                <i class="fas fa-tag" style="color: var(--dorado); font-size: 1.5rem;"></i>
-                <p>Costo estimado del viaje</p>
-                <div class="result-price" id="precio-viaje">$0.00</div>
-                <p style="color: var(--gris-claro); font-size: 0.9rem;">*Tarifa base + $5.00/km</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CONTACTO GLASS -->
-    <section id="contacto" class="contact">
-        <div class="section-header" data-aos="fade-up">
-            <h2>Contacto <span>Premium</span></h2>
-            <p>Atención personalizada 24/7</p>
-        </div>
-        
-        <div class="contact-container">
-            <div class="contact-info glass-card" data-aos="fade-right">
-                <h3>Información de Contacto</h3>
-                <p>Estamos aquí para atenderte</p>
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h4>Teléfono Elite</h4>
-                            <p>+52 561 683 3065</p>
-                            <p style="color: var(--dorado);">24/7 · Respuesta inmediata</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>hello@devodriver.com</p>
-                            <p>soporte@devodriver.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Oficina Central</h4>
-                            <p>Av. Tecnológico #123</p>
-                            <p>Mérida, Yucatán · México</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="social-links">
-                    <a href="#" class="glass-card"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="glass-card"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="glass-card"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="glass-card"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            
-            <div class="contact-form glass-card" data-aos="fade-left">
-                <h3>Envíanos un Mensaje</h3>
-                
-                <div class="form-group">
-                    <input type="text" placeholder="Nombre completo" id="nombre-contacto">
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Correo electrónico" id="email-contacto">
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Teléfono" id="telefono-contacto">
-                </div>
-                <div class="form-group">
-                    <select id="asunto-contacto">
-                        <option value="">Selecciona un asunto</option>
-                        <option value="servicios">Información de servicios</option>
-                        <option value="conductor">Ser conductor elite</option>
-                        <option value="empresa">Cuenta corporativa</option>
-                        <option value="soporte">Soporte técnico</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Escribe tu mensaje..." id="mensaje-contacto"></textarea>
-                </div>
-                
-                <button class="btn-3d" onclick="enviarContacto()" style="width: 100%;">
-                    <i class="fas fa-paper-plane"></i> Enviar Mensaje
-                </button>
-            </div>
-        </div>
-    </section>
-    
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="logo">
-                    <i class="fas fa-map-pin" style="color: var(--dorado);"></i>
-                    <span>DevoDriver</span>
-                </div>
-                <p>Actualizando la forma de moverte · Transporte premium con identidad mexicana.</p>
-                <p style="color: var(--dorado); margin-top: 1rem;">#MovilidadConPropósito</p>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Servicios Black</h4>
-                <ul>
-                    <li><a href="#">Viajes Ejecutivos</a></li>
-                    <li><a href="#">Corporativo</a></li>
-                    <li><a href="#">Aeropuerto VIP</a></li>
-                    <li><a href="#">Eventos Especiales</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Conductores</h4>
-                <ul>
-                    <li><a href="#">Únete al equipo elite</a></li>
-                    <li><a href="#">Requisitos</a></li>
-                    <li><a href="#">Beneficios</a></li>
-                    <li><a href="#">Historias DevoDriver</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Términos y Condiciones</a></li>
-                    <li><a href="#">Aviso de Privacidad</a></li>
-                    <li><a href="#">Política de Cookies</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>© 2026 DevoDriver · ISC02CA. Hecho en Mérida, Yucatán.</p>
-            <p style="margin-top: 0.5rem;">Diseñado con <i class="fas fa-heart" style="color: var(--dorado);"></i> para conductores y pasajeros mexicanos</p>
-        </div>
-    </footer>
-    
-    <!-- SCRIPTS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-    
-    <script>
-        // ========== INICIALIZAR AOS ==========
-        AOS.init({
-            duration: 800,
-            once: false,
-            offset: 100,
-            easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-        });
-        
-        // ========== CURSOR PERSONALIZADO ==========
-        const cursor = document.querySelector('.custom-cursor');
-        
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX - 12 + 'px';
-            cursor.style.top = e.clientY - 12 + 'px';
-        });
-        
-        document.querySelectorAll('a, button, .service-card, .driver-card, .btn-3d, input, select, textarea').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-        });
-        
-        // ========== VANILLA TILT 3D ==========
-        VanillaTilt.init(document.querySelectorAll(".service-card, .driver-card"), {
-            max: 8,
-            speed: 300,
-            glare: true,
-            "max-glare": 0.2,
-            scale: 1.02,
-            perspective: 1000,
-            easing: "cubic-bezier(.03,.98,.52,.99)",
-        });
-        
-        // ========== CONTADORES ANIMADOS ==========
-        function animateNumbers() {
-            document.querySelectorAll('.stat-item[data-count]').forEach(stat => {
-                const target = parseInt(stat.dataset.count);
-                const numberElement = stat.querySelector('.stat-number');
-                let current = 0;
-                const increment = target / 60;
-                
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        numberElement.textContent = target;
-                        clearInterval(timer);
-                    } else {
-                        numberElement.textContent = Math.floor(current);
-                    }
-                }, 20);
-            });
-        }
-        
-        // ========== CALCULADORA DE VIAJES ==========
-        function calcularViaje() {
-            const distancia = document.getElementById('distancia').value;
-            const tipo = document.getElementById('tipo-vehiculo').value;
-            
-            if (!distancia || distancia <= 0) {
-                alert('❌ Por favor ingresa una distancia válida');
-                return;
-            }
-            
-            let tarifaBase = 50;
-            let precioKm = 5;
-            
-            switch(tipo) {
-                case 'suv':
-                    tarifaBase = 80;
-                    precioKm = 8;
-                    break;
-                case 'van':
-                    tarifaBase = 100;
-                    precioKm = 10;
-                    break;
-                case 'sclass':
-                    tarifaBase = 150;
-                    precioKm = 15;
-                    break;
-            }
-            
-            const costo = tarifaBase + (parseFloat(distancia) * precioKm);
-            const precioElement = document.getElementById('precio-viaje');
-            precioElement.textContent = `$${costo.toFixed(2)} MXN`;
-            
-            // Animación
-            const resultBox = document.getElementById('resultado-viaje');
-            resultBox.style.transform = 'scale(1.05)';
-            resultBox.style.borderColor = '#FFD700';
-            setTimeout(() => {
-                resultBox.style.transform = 'scale(1)';
-            }, 200);
-        }
-        
-        // ========== CONTACTO ==========
-        function enviarContacto() {
-            const nombre = document.getElementById('nombre-contacto').value;
-            const email = document.getElementById('email-contacto').value;
-            const mensaje = document.getElementById('mensaje-contacto').value;
-            
-            if (!nombre || !email || !mensaje) {
-                alert('❌ Por favor completa todos los campos obligatorios');
-                return;
-            }
-            
-            alert('✅ ¡Mensaje enviado con éxito! Te contactaremos en menos de 15 minutos.');
-            
-            // Limpiar formulario
-            document.getElementById('nombre-contacto').value = '';
-            document.getElementById('email-contacto').value = '';
-            document.getElementById('telefono-contacto').value = '';
-            document.getElementById('asunto-contacto').value = '';
-            document.getElementById('mensaje-contacto').value = '';
-        }
-        
-        // ========== INICIAR CONTADORES AL CARGAR ==========
-        window.addEventListener('load', animateNumbers);
-        
-        // ========== SMOOTH SCROLL ==========
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-    
-    <style>
-        /* ========== CSS ADICIONAL ========== */
-        :root {
-            --negro: #0B0B0B;
-            --negro-claro: #1A1A1A;
-            --dorado: #FFD700;
-            --dorado-oscuro: #B8860B;
-            --blanco: #FFFFFF;
-            --gris: #333333;
-            --gris-claro: #CCCCCC;
-        }
-        
-        .logo span {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(45deg, var(--dorado), var(--dorado-oscuro));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .nav-links a {
-            color: var(--blanco);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--dorado);
-        }
-        
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-            position: relative;
+            flex: 1;
         }
         
         .hero-badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 0.5rem 1rem;
             background: rgba(255, 215, 0, 0.1);
             border: 1px solid rgba(255, 215, 0, 0.3);
@@ -840,7 +239,11 @@
             color: var(--dorado);
             font-weight: 600;
             margin-bottom: 1.5rem;
-            backdrop-filter: blur(5px);
+        }
+        
+        .hero-badge img {
+            width: 20px;
+            height: 20px;
         }
         
         .hero h1 {
@@ -854,10 +257,14 @@
             background: linear-gradient(45deg, var(--dorado), var(--dorado-oscuro));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
-        .glow-text {
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        .hero h1 span img {
+            width: 60px;
+            height: 60px;
         }
         
         .hero p {
@@ -865,24 +272,40 @@
             color: var(--gris-claro);
             max-width: 600px;
             margin-bottom: 2rem;
+            line-height: 1.6;
         }
         
         .hero-stats {
             display: flex;
             gap: 3rem;
+            margin-top: 3rem;
         }
         
         .stat-item {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .stat-item img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dorado);
         }
         
         .stat-label {
-            display: block;
             color: var(--gris-claro);
             font-size: 0.9rem;
-            margin-top: 0.3rem;
         }
         
+        /* ========== SERVICIOS ========== */
         .services, .drivers, .trips, .contact {
             padding: 5rem 5%;
             position: relative;
@@ -896,49 +319,119 @@
         .section-header h2 {
             font-size: 3rem;
             font-weight: 700;
-            color: var(--blanco);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .section-header h2 img {
+            width: 50px;
+            height: 50px;
         }
         
         .section-header h2 span {
             color: var(--dorado);
-            position: relative;
         }
         
         .section-header p {
             color: var(--gris-claro);
             font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
-        .services-grid, .drivers-showcase {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(255, 215, 0, 0.25);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            border-color: var(--dorado);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(255,215,0,0.2);
+            transform: translateY(-5px);
         }
         
         .service-icon {
-            font-size: 3rem;
-            color: var(--dorado);
             margin-bottom: 1.5rem;
         }
         
-        .service-card h3, .driver-card h3 {
+        .service-icon img {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .service-card h3 {
             font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .service-card p {
+            color: var(--gris-claro);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
         
         .service-features {
             list-style: none;
-            margin-top: 1rem;
         }
         
         .service-features li {
-            margin-bottom: 0.5rem;
-            color: var(--gris-claro);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--blanco);
         }
         
-        .service-features i {
-            color: var(--dorado);
-            margin-right: 0.5rem;
+        .service-features img {
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* ========== CONDUCTORES ========== */
+        .drivers-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .driver-card {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(255, 215, 0, 0.25);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        
+        .driver-card:hover {
+            border-color: var(--dorado);
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(255,215,0,0.2);
         }
         
         .driver-avatar {
@@ -952,9 +445,16 @@
             margin-bottom: 1.5rem;
         }
         
-        .driver-avatar i {
-            font-size: 3.5rem;
-            color: var(--negro);
+        .driver-avatar img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        
+        .driver-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
         }
         
         .driver-rating {
@@ -967,19 +467,35 @@
             justify-content: center;
             gap: 1.5rem;
             margin-top: 1rem;
+        }
+        
+        .driver-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .driver-stat .number {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dorado);
+        }
+        
+        .driver-stat .label {
+            font-size: 0.8rem;
             color: var(--gris-claro);
         }
         
-        .driver-stats .number {
-            color: var(--dorado);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-        
+        /* ========== CALCULADORA ========== */
         .trip-calculator {
             max-width: 900px;
             margin: 0 auto;
             padding: 3rem;
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(255, 215, 0, 0.25);
+            border-radius: 30px;
         }
         
         .calculator-title {
@@ -989,13 +505,14 @@
             margin-bottom: 2rem;
         }
         
-        .calculator-title i {
-            font-size: 2rem;
-            color: var(--dorado);
+        .calculator-title img {
+            width: 40px;
+            height: 40px;
         }
         
         .calculator-title h3 {
             font-size: 1.8rem;
+            font-weight: 700;
         }
         
         .calculator-grid {
@@ -1005,11 +522,22 @@
             margin-bottom: 2rem;
         }
         
+        .input-group {
+            margin-bottom: 1rem;
+        }
+        
         .input-group label {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             margin-bottom: 0.5rem;
             color: var(--dorado);
             font-weight: 600;
+        }
+        
+        .input-group label img {
+            width: 18px;
+            height: 18px;
         }
         
         .input-group input,
@@ -1021,7 +549,6 @@
             border-radius: 10px;
             color: var(--blanco);
             font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
         }
         
         .input-group input:focus,
@@ -1039,16 +566,22 @@
             border: 1px solid rgba(255, 215, 0, 0.3);
             border-radius: 15px;
             text-align: center;
-            transition: all 0.3s ease;
+        }
+        
+        .result-box img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 1rem;
         }
         
         .result-price {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 800;
             color: var(--dorado);
             margin-top: 0.5rem;
         }
         
+        /* ========== CONTACTO ========== */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1059,6 +592,24 @@
         
         .contact-info, .contact-form {
             padding: 2.5rem;
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(255, 215, 0, 0.25);
+            border-radius: 20px;
+        }
+        
+        .contact-info h3, .contact-form h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-info h3 img, .contact-form h3 img {
+            width: 35px;
+            height: 35px;
         }
         
         .contact-item {
@@ -1068,17 +619,18 @@
             margin-bottom: 1.5rem;
         }
         
-        .contact-item i {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dorado);
-            font-size: 1.2rem;
-            border: 1px solid rgba(255, 215, 0, 0.3);
+        .contact-item img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .contact-item h4 {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        
+        .contact-item p {
+            color: var(--gris-claro);
         }
         
         .form-group {
@@ -1111,12 +663,14 @@
         .social-links a {
             width: 45px;
             height: 45px;
+            background: rgba(255, 215, 0, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--dorado);
             text-decoration: none;
+            border: 1px solid rgba(255, 215, 0, 0.3);
             transition: all 0.3s ease;
         }
         
@@ -1126,6 +680,7 @@
             transform: translateY(-3px);
         }
         
+        /* ========== FOOTER ========== */
         footer {
             background: rgba(11, 11, 11, 0.95);
             backdrop-filter: blur(10px);
@@ -1141,9 +696,29 @@
             margin-bottom: 3rem;
         }
         
+        .footer-section .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section .logo img {
+            width: 40px;
+            height: 40px;
+        }
+        
         .footer-section h4 {
             color: var(--dorado);
             margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-section h4 img {
+            width: 20px;
+            height: 20px;
         }
         
         .footer-section ul {
@@ -1158,6 +733,9 @@
             color: var(--gris-claro);
             text-decoration: none;
             transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .footer-section ul li a:hover {
@@ -1169,34 +747,48 @@
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 215, 0, 0.1);
             color: var(--gris-claro);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-bottom img {
+            width: 25px;
+            height: 25px;
+        }
+        
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-            
             .hero {
                 flex-direction: column;
                 text-align: center;
                 padding-top: 100px;
             }
-            
             .hero h1 {
                 font-size: 3rem;
             }
-            
+            .hero h1 span {
+                justify-content: center;
+            }
             .hero-stats {
                 justify-content: center;
                 flex-wrap: wrap;
             }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .calculator-grid {
-                grid-template-columns: 1fr;
+            .section-header h2 {
+                font-size: 2.5rem;
             }
         }
         
@@ -1204,15 +796,549 @@
             .hero h1 {
                 font-size: 2.2rem;
             }
-            
+            .hero h1 span img {
+                width: 40px;
+                height: 40px;
+            }
             .section-header h2 {
                 font-size: 2rem;
             }
-            
             .result-price {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
         }
     </style>
+</head>
+<body>
+    <!-- PARTICULAS ANIMADAS -->
+    <div class="particles"></div>
+
+    <!-- NAVEGACIÓN CON TU LOGO -->
+    <nav>
+        <div class="logo">
+            <img src="logov2.ico" alt="DevoDriver" class="logo-img" onerror="this.src='logov2.png'; this.onerror=null;">
+            <span>DevoDriver</span>
+        </div>
+        <div class="nav-links">
+            <a href="#inicio"><img src="logov2.ico" alt="🏠" style="width: 18px; height: 18px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span style="display:none;">🏠</span> Inicio</a>
+            <a href="#servicios"><img src="logov2.ico" alt="👑" style="width: 18px; height: 18px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span style="display:none;">👑</span> Servicios</a>
+            <a href="#conductores"><img src="logov2.ico" alt="👥" style="width: 18px; height: 18px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span style="display:none;">👥</span> Elite</a>
+            <a href="#viajes"><img src="logov2.ico" alt="📍" style="width: 18px; height: 18px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span style="display:none;">📍</span> Viajes</a>
+            <a href="#contacto" class="btn-contacto"><img src="logov2.ico" alt="📞" style="width: 18px; height: 18px; filter: brightness(0);" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span style="display:none;">📞</span> Contacto</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION CON TU LOGO -->
+    <section id="inicio" class="hero">
+        <div class="hero-background">
+            <video autoplay muted loop playsinline>
+                <source src="https://player.vimeo.com/external/371837302.hd.mp4?s=236cae6e3b7b0851cf6b68eef43c1bb2d45b6c0a&profile_id=174" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="hero-content" data-aos="fade-up">
+            <span class="hero-badge">
+                <img src="logov2.ico" alt="⚡" style="width: 20px; height: 20px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span style="display:none;">⚡</span>
+                MOVILIDAD PREMIUM 24/7
+            </span>
+            <h1>
+                Conduce con <br>
+                <span>
+                    <img src="logov2.ico" alt="Estilo" style="width: 50px; height: 50px;" onerror="this.style.display='none';">
+                    Estilo y Elegancia
+                </span>
+            </h1>
+            <p>
+                DevoDriver te ofrece la experiencia de transporte más exclusiva. 
+                Conductores elite, vehículos de lujo y un servicio que supera 
+                cualquier expectativa.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <img src="logov2.ico" alt="Conductores" style="width: 40px; height: 40px;" onerror="this.style.display='none';">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Conductores Elite</span>
+                </div>
+                <div class="stat-item">
+                    <img src="logov2.ico" alt="Viajes" style="width: 40px; height: 40px;" onerror="this.style.display='none';">
+                    <span class="stat-number">15k+</span>
+                    <span class="stat-label">Viajes Premium</span>
+                </div>
+                <div class="stat-item">
+                    <img src="logov2.ico" alt="Satisfacción" style="width: 40px; height: 40px;" onerror="this.style.display='none';">
+                    <span class="stat-number">99%</span>
+                    <span class="stat-label">Satisfacción</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS CON TU LOGO -->
+    <section id="servicios" class="services">
+        <div class="section-header" data-aos="fade-up">
+            <h2>
+                <img src="logov2.ico" alt="👑" style="width: 50px; height: 50px;" onerror="this.style.display='none';">
+                Servicios <span>Black</span>
+            </h2>
+            <p>Experiencias exclusivas diseñadas para quienes exigen lo mejor</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon">
+                    <img src="logov2.ico" alt="Viajes Black" style="width: 60px; height: 60px;">
+                </div>
+                <h3>
+                    <img src="logov2.ico" alt="🚗" style="width: 25px; height: 25px;" onerror="this.style.display='none';">
+                    Viajes Black
+                </h3>
+                <p>Traslados en vehículos de alta gama con conductores bilingües y asistencia personal.</p>
+                <ul class="service-features">
+                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Mercedes-Benz / BMW</li>
+                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Conductor ejecutivo</li>
+                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Amenidades a bordo</li>
+                </ul>
+            </div>
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon">
+                    <img src="logov2.ico" alt="Corporativo" style="width: 60px; height: 60px;">
+                </div>
+                <h3>
+                    <img src="logov2.ico" alt="💼" style="width: 25px; height: 25px;" onerror="this.style.display='none';">
+                    Corporativo
+                </h3>
+                <p>Soluciones integrales para empresas con facturación automática y reportes ejecutivos.</p>
+                <ul class="service-features">
+                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Cuentas corporativas</li>
+                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Facturación mensual</li>
+                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Dashboard ejecutivo</li>
+                </ul>
+            </div>
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon">
+                    <img src="logov2.ico" alt="Aeropuerto VIP" style="width: 60px; height: 60px;">
+                </div>
+                <h3>
+                    <img src="logov2.ico" alt="✈️" style="width: 25px; height: 25px;" onerror="this.style.display='none';">
+                    Aeropuerto VIP
+                </h3>
+                <p>Traslados premium con monitoreo de vuelos y hasta 60 minutos de espera sin cargo.</p>
+                <ul class="service-features">
+                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Monitoreo en tiempo real</li>
+                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Asistencia con equipaje</li>
+                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Welcome kit</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONDUCTORES ELITE CON TU LOGO -->
+    <section id="conductores" class="drivers">
+        <div class="section-header" data-aos="fade-up">
+            <h2>
+                <img src="logov2.ico" alt="👥" style="width: 50px; height: 50px;" onerror="this.style.display='none';">
+                Conductores <span>Elite</span>
+            </h2>
+            <p>Los mejores profesionales, los vehículos más exclusivos</p>
+        </div>
+        
+        <div class="drivers-showcase">
+            <div class="driver-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="driver-avatar">
+                    <img src="logov2.ico" alt="Alejandro Martínez">
+                </div>
+                <h3>Alejandro Martínez</h3>
+                <div class="driver-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p style="color: var(--dorado);">Mercedes-Benz Clase S</p>
+                <div class="driver-stats">
+                    <div class="driver-stat">
+                        <span class="number">1,234</span>
+                        <span class="label">viajes</span>
+                    </div>
+                    <div class="driver-stat">
+                        <span class="number">4.99</span>
+                        <span class="label">rating</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="driver-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="driver-avatar">
+                    <img src="logov2.ico" alt="Carolina Rivas">
+                </div>
+                <h3>Carolina Rivas</h3>
+                <div class="driver-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p style="color: var(--dorado);">BMW Serie 7</p>
+                <div class="driver-stats">
+                    <div class="driver-stat">
+                        <span class="number">987</span>
+                        <span class="label">viajes</span>
+                    </div>
+                    <div class="driver-stat">
+                        <span class="number">5.00</span>
+                        <span class="label">rating</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="driver-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="driver-avatar">
+                    <img src="logov2.ico" alt="Roberto Sánchez">
+                </div>
+                <h3>Roberto Sánchez</h3>
+                <div class="driver-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p style="color: var(--dorado);">Audi A8 L</p>
+                <div class="driver-stats">
+                    <div class="driver-stat">
+                        <span class="number">1,567</span>
+                        <span class="label">viajes</span>
+                    </div>
+                    <div class="driver-stat">
+                        <span class="number">4.98</span>
+                        <span class="label">rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULADORA CON TU LOGO -->
+    <section id="viajes" class="trips">
+        <div class="section-header" data-aos="fade-up">
+            <h2>
+                <img src="logov2.ico" alt="📍" style="width: 50px; height: 50px;" onerror="this.style.display='none';">
+                Calculadora <span>Black</span>
+            </h2>
+            <p>Presupuesto instantáneo para tu viaje</p>
+        </div>
+        
+        <div class="trip-calculator" data-aos="flip-up">
+            <div class="calculator-title">
+                <img src="logov2.ico" alt="🧮" style="width: 40px; height: 40px;">
+                <h3>Simulador de Costos</h3>
+            </div>
+            
+            <div class="calculator-grid">
+                <div class="input-group">
+                    <label>
+                        <img src="logov2.ico" alt="📍" style="width: 18px; height: 18px;">
+                        Origen
+                    </label>
+                    <input type="text" id="origen" placeholder="Tu ubicación">
+                </div>
+                <div class="input-group">
+                    <label>
+                        <img src="logov2.ico" alt="📍" style="width: 18px; height: 18px;">
+                        Destino
+                    </label>
+                    <input type="text" id="destino" placeholder="¿A dónde vas?">
+                </div>
+                <div class="input-group">
+                    <label>
+                        <img src="logov2.ico" alt="📏" style="width: 18px; height: 18px;">
+                        Distancia (km)
+                    </label>
+                    <input type="number" id="distancia" placeholder="0.0" step="0.1">
+                </div>
+                <div class="input-group">
+                    <label>
+                        <img src="logov2.ico" alt="🚗" style="width: 18px; height: 18px;">
+                        Categoría
+                    </label>
+                    <select id="tipo-vehiculo">
+                        <option value="sedan">Black Sedán</option>
+                        <option value="suv">Black SUV</option>
+                        <option value="van">Black Van</option>
+                        <option value="sclass">Clase S / Serie 7</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="btn-3d" onclick="calcularViaje()" style="width: 100%; padding: 1rem;">
+                <img src="logov2.ico" alt="🧮" style="width: 20px; height: 20px; margin-right: 8px; filter: brightness(0);" onerror="this.style.display='none';">
+                Calcular Costo
+            </button>
+            
+            <div class="result-box" id="resultado-viaje">
+                <img src="logov2.ico" alt="💰" style="width: 40px; height: 40px;">
+                <p style="color: var(--blanco); margin-bottom: 0.5rem;">Costo estimado del viaje</p>
+                <div class="result-price" id="precio-viaje">$0.00</div>
+                <p style="color: var(--gris-claro); font-size: 0.9rem;">*Tarifa base + $5.00/km</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO CON TU LOGO -->
+    <section id="contacto" class="contact">
+        <div class="section-header" data-aos="fade-up">
+            <h2>
+                <img src="logov2.ico" alt="📞" style="width: 50px; height: 50px;" onerror="this.style.display='none';">
+                Contacto <span>Premium</span>
+            </h2>
+            <p>Atención personalizada 24/7</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right">
+                <h3>
+                    <img src="logov2.ico" alt="ℹ️" style="width: 35px; height: 35px;">
+                    Información de Contacto
+                </h3>
+                <p style="color: var(--gris-claro); margin-bottom: 2rem;">Estamos aquí para atenderte</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <img src="logov2.ico" alt="📞">
+                        <div>
+                            <h4>Teléfono Elite</h4>
+                            <p>+52 561 683 3065</p>
+                            <p style="color: var(--dorado);">24/7 · Respuesta inmediata</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="logov2.ico" alt="📧">
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@devodriver.com</p>
+                            <p>soporte@devodriver.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="logov2.ico" alt="📍">
+                        <div>
+                            <h4>Oficina Central</h4>
+                            <p>Av. Tecnológico #123</p>
+                            <p>Mérida, Yucatán · México</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form" data-aos="fade-left">
+                <h3>
+                    <img src="logov2.ico" alt="✉️" style="width: 35px; height: 35px;">
+                    Envíanos un Mensaje
+                </h3>
+                
+                <div class="form-group">
+                    <input type="text" id="nombre-contacto" placeholder="Nombre completo">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email-contacto" placeholder="Correo electrónico">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="telefono-contacto" placeholder="Teléfono">
+                </div>
+                <div class="form-group">
+                    <select id="asunto-contacto">
+                        <option value="">Selecciona un asunto</option>
+                        <option value="servicios">Información de servicios</option>
+                        <option value="conductor">Ser conductor elite</option>
+                        <option value="empresa">Cuenta corporativa</option>
+                        <option value="soporte">Soporte técnico</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="mensaje-contacto" placeholder="Escribe tu mensaje..."></textarea>
+                </div>
+                
+                <button class="btn-3d" onclick="enviarContacto()" style="width: 100%;">
+                    <img src="logov2.ico" alt="✈️" style="width: 18px; height: 18px; margin-right: 8px; filter: brightness(0);" onerror="this.style.display='none';">
+                    Enviar Mensaje
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CON TU LOGO -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <img src="logov2.ico" alt="DevoDriver" style="width: 40px; height: 40px;">
+                    <span>DevoDriver</span>
+                </div>
+                <p style="color: var(--gris-claro); line-height: 1.6; margin-bottom: 1rem;">
+                    Actualizando la forma de moverte · Transporte premium con identidad mexicana.
+                </p>
+                <p style="color: var(--dorado);">#MovilidadConPropósito</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>
+                    <img src="logov2.ico" alt="👑" style="width: 20px; height: 20px;">
+                    Servicios Black
+                </h4>
+                <ul>
+                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Viajes Ejecutivos</a></li>
+                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Corporativo</a></li>
+                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Aeropuerto VIP</a></li>
+                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Eventos Especiales</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>
+                    <img src="logov2.ico" alt="👥" style="width: 20px; height: 20px;">
+                    Conductores
+                </h4>
+                <ul>
+                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Únete al equipo elite</a></li>
+                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Requisitos</a></li>
+                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Beneficios</a></li>
+                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Historias DevoDriver</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>
+                    <img src="logov2.ico" alt="⚖️" style="width: 20px; height: 20px;">
+                    Legal
+                </h4>
+                <ul>
+                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Términos y Condiciones</a></li>
+                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Aviso de Privacidad</a></li>
+                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Política de Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <img src="logov2.ico" alt="❤️" style="width: 25px; height: 25px;">
+            <p>© 2026 DevoDriver · ISC02CA. Hecho en Mérida, Yucatán.</p>
+            <p style="margin-top: 0.5rem;">Diseñado con <i class="fas fa-heart" style="color: var(--dorado);"></i> para conductores y pasajeros mexicanos</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    
+    <script>
+        // ========== INICIALIZAR AOS ==========
+        AOS.init({
+            duration: 800,
+            once: false,
+            offset: 100,
+            easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+        });
+        
+        // ========== VANILLA TILT 3D ==========
+        VanillaTilt.init(document.querySelectorAll(".service-card, .driver-card"), {
+            max: 8,
+            speed: 300,
+            glare: true,
+            "max-glare": 0.2,
+            scale: 1.02,
+            perspective: 1000,
+            easing: "cubic-bezier(.03,.98,.52,.99)",
+        });
+        
+        // ========== CALCULADORA DE VIAJES ==========
+        function calcularViaje() {
+            const distancia = document.getElementById('distancia').value;
+            const tipo = document.getElementById('tipo-vehiculo').value;
+            
+            if (!distancia || distancia <= 0) {
+                alert('❌ Por favor ingresa una distancia válida');
+                return;
+            }
+            
+            let tarifaBase = 50;
+            let precioKm = 5;
+            
+            switch(tipo) {
+                case 'suv':
+                    tarifaBase = 80;
+                    precioKm = 8;
+                    break;
+                case 'van':
+                    tarifaBase = 100;
+                    precioKm = 10;
+                    break;
+                case 'sclass':
+                    tarifaBase = 150;
+                    precioKm = 15;
+                    break;
+            }
+            
+            const costo = tarifaBase + (parseFloat(distancia) * precioKm);
+            document.getElementById('precio-viaje').textContent = `$${costo.toFixed(2)} MXN`;
+            
+            
+            const resultBox = document.getElementById('resultado-viaje');
+            resultBox.style.transform = 'scale(1.05)';
+            resultBox.style.borderColor = '#FFD700';
+            setTimeout(() => {
+                resultBox.style.transform = 'scale(1)';
+            }, 200);
+        }
+        
+        
+        function enviarContacto() {
+            const nombre = document.getElementById('nombre-contacto').value;
+            const email = document.getElementById('email-contacto').value;
+            const mensaje = document.getElementById('mensaje-contacto').value;
+            
+            if (!nombre || !email || !mensaje) {
+                alert('❌ Por favor completa todos los campos obligatorios');
+                return;
+            }
+            
+            alert('✅ ¡Mensaje enviado con éxito! Te contactaremos en menos de 15 minutos.');
+            
+           
+            document.getElementById('nombre-contacto').value = '';
+            document.getElementById('email-contacto').value = '';
+            document.getElementById('telefono-contacto').value = '';
+            document.getElementById('asunto-contacto').value = '';
+            document.getElementById('mensaje-contacto').value = '';
+        }
+        
+        // ========== SMOOTH SCROLL ==========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // ========== FALLBACK PARA IMÁGENES ==========
+        document.querySelectorAll('img').forEach(img => {
+            img.onerror = function() {
+                this.style.display = 'none';
+                if (this.nextElementSibling && this.nextElementSibling.tagName === 'SPAN') {
+                    this.nextElementSibling.style.display = 'inline';
+                }
+            };
+        });
+    </script>
 </body>
 </html>
