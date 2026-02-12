@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevoDriver | Transporte Premium</title>
     
-    <!-- ========== FAVICON OFICIAL - LOGOV2.ICO ========== -->
+    <!-- ========== FAVICON OFICIAL - SOLO AQUÍ ========== -->
     <link rel="icon" type="image/x-icon" href="logov2.ico">
     <link rel="shortcut icon" href="logov2.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="32x32" href="logov2.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="logov2.png">
     <link rel="apple-touch-icon" href="logov2.png">
     <meta name="msapplication-TileImage" content="logov2.png">
     <meta name="theme-color" content="#0B0B0B">
-    <!-- ================================================= -->
+    <!-- =============================================== -->
     
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -141,6 +139,7 @@
             gap: 1rem;
         }
         
+        /* ===== LOGO OFICIAL - SOLO AQUÍ Y EN FOOTER/CONTACTO ===== */
         .logo-img {
             width: 45px;
             height: 45px;
@@ -184,6 +183,10 @@
             padding: 0.8rem 1.8rem;
             border-radius: 50px;
             font-weight: 700;
+        }
+        
+        .btn-contacto i {
+            color: var(--negro) !important;
         }
         
         /* ========== HERO SECTION ========== */
@@ -241,9 +244,8 @@
             margin-bottom: 1.5rem;
         }
         
-        .hero-badge img {
-            width: 20px;
-            height: 20px;
+        .hero-badge i {
+            font-size: 1.2rem;
         }
         
         .hero h1 {
@@ -260,11 +262,6 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-        }
-        
-        .hero h1 span img {
-            width: 60px;
-            height: 60px;
         }
         
         .hero p {
@@ -289,9 +286,9 @@
             gap: 0.5rem;
         }
         
-        .stat-item img {
-            width: 40px;
-            height: 40px;
+        .stat-item i {
+            font-size: 2.5rem;
+            color: var(--dorado);
         }
         
         .stat-number {
@@ -326,9 +323,9 @@
             gap: 1rem;
         }
         
-        .section-header h2 img {
-            width: 50px;
-            height: 50px;
+        .section-header h2 i {
+            font-size: 3rem;
+            color: var(--dorado);
         }
         
         .section-header h2 span {
@@ -366,13 +363,10 @@
             transform: translateY(-5px);
         }
         
-        .service-icon {
+        .service-icon i {
+            font-size: 3.5rem;
+            color: var(--dorado);
             margin-bottom: 1.5rem;
-        }
-        
-        .service-icon img {
-            width: 60px;
-            height: 60px;
         }
         
         .service-card h3 {
@@ -402,9 +396,9 @@
             color: var(--blanco);
         }
         
-        .service-features img {
-            width: 20px;
-            height: 20px;
+        .service-features i {
+            color: var(--dorado);
+            font-size: 1.1rem;
         }
         
         /* ========== CONDUCTORES ========== */
@@ -445,10 +439,9 @@
             margin-bottom: 1.5rem;
         }
         
-        .driver-avatar img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+        .driver-avatar i {
+            font-size: 3.5rem;
+            color: var(--negro);
         }
         
         .driver-card h3 {
@@ -505,9 +498,9 @@
             margin-bottom: 2rem;
         }
         
-        .calculator-title img {
-            width: 40px;
-            height: 40px;
+        .calculator-title i {
+            font-size: 2.5rem;
+            color: var(--dorado);
         }
         
         .calculator-title h3 {
@@ -535,9 +528,9 @@
             font-weight: 600;
         }
         
-        .input-group label img {
-            width: 18px;
-            height: 18px;
+        .input-group label i {
+            font-size: 1.1rem;
+            color: var(--dorado);
         }
         
         .input-group input,
@@ -568,9 +561,9 @@
             text-align: center;
         }
         
-        .result-box img {
-            width: 40px;
-            height: 40px;
+        .result-box i {
+            font-size: 2.5rem;
+            color: var(--dorado);
             margin-bottom: 1rem;
         }
         
@@ -581,7 +574,7 @@
             margin-top: 0.5rem;
         }
         
-        /* ========== CONTACTO ========== */
+        /* ========== CONTACTO - CON LOGO OFICIAL ========== */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -607,9 +600,10 @@
             gap: 0.5rem;
         }
         
+        /* ===== LOGO OFICIAL EN CONTACTO ===== */
         .contact-info h3 img, .contact-form h3 img {
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
         }
         
         .contact-item {
@@ -619,6 +613,7 @@
             margin-bottom: 1.5rem;
         }
         
+        /* ===== LOGO OFICIAL EN ÍCONOS DE CONTACTO ===== */
         .contact-item img {
             width: 40px;
             height: 40px;
@@ -680,7 +675,7 @@
             transform: translateY(-3px);
         }
         
-        /* ========== FOOTER ========== */
+        /* ========== FOOTER - CON LOGO OFICIAL ========== */
         footer {
             background: rgba(11, 11, 11, 0.95);
             backdrop-filter: blur(10px);
@@ -703,9 +698,10 @@
             margin-bottom: 1rem;
         }
         
+        /* ===== LOGO OFICIAL EN FOOTER ===== */
         .footer-section .logo img {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
         }
         
         .footer-section h4 {
@@ -716,9 +712,8 @@
             gap: 0.5rem;
         }
         
-        .footer-section h4 img {
-            width: 20px;
-            height: 20px;
+        .footer-section h4 i {
+            font-size: 1.2rem;
         }
         
         .footer-section ul {
@@ -738,6 +733,11 @@
             gap: 0.5rem;
         }
         
+        .footer-section ul li a i {
+            color: var(--dorado);
+            font-size: 0.9rem;
+        }
+        
         .footer-section ul li a:hover {
             color: var(--dorado);
         }
@@ -753,9 +753,11 @@
             gap: 0.5rem;
         }
         
+        /* ===== LOGO OFICIAL EN FOOTER BOTTOM ===== */
         .footer-bottom img {
-            width: 25px;
-            height: 25px;
+            width: 30px;
+            height: 30px;
+            margin-bottom: 0.5rem;
         }
         
         /* ========== RESPONSIVE ========== */
@@ -780,9 +782,6 @@
             .hero h1 {
                 font-size: 3rem;
             }
-            .hero h1 span {
-                justify-content: center;
-            }
             .hero-stats {
                 justify-content: center;
                 flex-wrap: wrap;
@@ -795,10 +794,6 @@
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2.2rem;
-            }
-            .hero h1 span img {
-                width: 40px;
-                height: 40px;
             }
             .section-header h2 {
                 font-size: 2rem;
@@ -813,22 +808,22 @@
     <!-- PARTICULAS ANIMADAS -->
     <div class="particles"></div>
 
-    <!-- NAVEGACIÓN CON TU LOGO -->
+    <!-- ===== NAVEGACIÓN - LOGO OFICIAL SOLO AQUÍ ===== -->
     <nav>
         <div class="logo">
             <img src="logov2.ico" alt="DevoDriver" class="logo-img" onerror="this.src='logov2.png'; this.onerror=null;">
             <span>DevoDriver</span>
         </div>
         <div class="nav-links">
-            <a href="#inicio"><img src="logov2.ico" alt="🏠" style="width: 18px; height: 18px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span style="display:none;">🏠</span> Inicio</a>
-            <a href="#servicios"><img src="logov2.ico" alt="👑" style="width: 18px; height: 18px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span style="display:none;">👑</span> Servicios</a>
-            <a href="#conductores"><img src="logov2.ico" alt="👥" style="width: 18px; height: 18px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span style="display:none;">👥</span> Elite</a>
-            <a href="#viajes"><img src="logov2.ico" alt="📍" style="width: 18px; height: 18px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span style="display:none;">📍</span> Viajes</a>
-            <a href="#contacto" class="btn-contacto"><img src="logov2.ico" alt="📞" style="width: 18px; height: 18px; filter: brightness(0);" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span style="display:none;">📞</span> Contacto</a>
+            <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
+            <a href="#servicios"><i class="fas fa-crown"></i> Servicios</a>
+            <a href="#conductores"><i class="fas fa-users"></i> Elite</a>
+            <a href="#viajes"><i class="fas fa-route"></i> Viajes</a>
+            <a href="#contacto" class="btn-contacto"><i class="fas fa-headset"></i> Contacto</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION CON TU LOGO -->
+    <!-- ===== HERO SECTION - SOLO EMOJIS, SIN LOGO ===== -->
     <section id="inicio" class="hero">
         <div class="hero-background">
             <video autoplay muted loop playsinline>
@@ -838,15 +833,11 @@
         
         <div class="hero-content" data-aos="fade-up">
             <span class="hero-badge">
-                <img src="logov2.ico" alt="⚡" style="width: 20px; height: 20px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span style="display:none;">⚡</span>
-                MOVILIDAD PREMIUM 24/7
+                <i class="fas fa-bolt"></i> MOVILIDAD PREMIUM 24/7
             </span>
             <h1>
                 Conduce con <br>
-                <span>
-                    <img src="logov2.ico" alt="Estilo" style="width: 50px; height: 50px;" onerror="this.style.display='none';">
-                    Estilo y Elegancia
-                </span>
+                <span>Estilo y Elegancia</span>
             </h1>
             <p>
                 DevoDriver te ofrece la experiencia de transporte más exclusiva. 
@@ -855,17 +846,17 @@
             </p>
             <div class="hero-stats">
                 <div class="stat-item">
-                    <img src="logov2.ico" alt="Conductores" style="width: 40px; height: 40px;" onerror="this.style.display='none';">
+                    <i class="fas fa-user-tie"></i>
                     <span class="stat-number">500+</span>
                     <span class="stat-label">Conductores Elite</span>
                 </div>
                 <div class="stat-item">
-                    <img src="logov2.ico" alt="Viajes" style="width: 40px; height: 40px;" onerror="this.style.display='none';">
+                    <i class="fas fa-car"></i>
                     <span class="stat-number">15k+</span>
                     <span class="stat-label">Viajes Premium</span>
                 </div>
                 <div class="stat-item">
-                    <img src="logov2.ico" alt="Satisfacción" style="width: 40px; height: 40px;" onerror="this.style.display='none';">
+                    <i class="fas fa-star"></i>
                     <span class="stat-number">99%</span>
                     <span class="stat-label">Satisfacción</span>
                 </div>
@@ -873,11 +864,11 @@
         </div>
     </section>
 
-    <!-- SERVICIOS CON TU LOGO -->
+    <!-- ===== SERVICIOS - SOLO EMOJIS, SIN LOGO ===== -->
     <section id="servicios" class="services">
         <div class="section-header" data-aos="fade-up">
             <h2>
-                <img src="logov2.ico" alt="👑" style="width: 50px; height: 50px;" onerror="this.style.display='none';">
+                <i class="fas fa-crown"></i>
                 Servicios <span>Black</span>
             </h2>
             <p>Experiencias exclusivas diseñadas para quienes exigen lo mejor</p>
@@ -886,59 +877,50 @@
         <div class="services-grid">
             <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="service-icon">
-                    <img src="logov2.ico" alt="Viajes Black" style="width: 60px; height: 60px;">
+                    <i class="fas fa-car-side"></i>
                 </div>
-                <h3>
-                    <img src="logov2.ico" alt="🚗" style="width: 25px; height: 25px;" onerror="this.style.display='none';">
-                    Viajes Black
-                </h3>
+                <h3><i class="fas fa-car"></i> Viajes Black</h3>
                 <p>Traslados en vehículos de alta gama con conductores bilingües y asistencia personal.</p>
                 <ul class="service-features">
-                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Mercedes-Benz / BMW</li>
-                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Conductor ejecutivo</li>
-                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Amenidades a bordo</li>
+                    <li><i class="fas fa-check-circle"></i> Mercedes-Benz / BMW</li>
+                    <li><i class="fas fa-check-circle"></i> Conductor ejecutivo</li>
+                    <li><i class="fas fa-check-circle"></i> Amenidades a bordo</li>
                 </ul>
             </div>
             
             <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="service-icon">
-                    <img src="logov2.ico" alt="Corporativo" style="width: 60px; height: 60px;">
+                    <i class="fas fa-briefcase"></i>
                 </div>
-                <h3>
-                    <img src="logov2.ico" alt="💼" style="width: 25px; height: 25px;" onerror="this.style.display='none';">
-                    Corporativo
-                </h3>
+                <h3><i class="fas fa-building"></i> Corporativo</h3>
                 <p>Soluciones integrales para empresas con facturación automática y reportes ejecutivos.</p>
                 <ul class="service-features">
-                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Cuentas corporativas</li>
-                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Facturación mensual</li>
-                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Dashboard ejecutivo</li>
+                    <li><i class="fas fa-check-circle"></i> Cuentas corporativas</li>
+                    <li><i class="fas fa-check-circle"></i> Facturación mensual</li>
+                    <li><i class="fas fa-check-circle"></i> Dashboard ejecutivo</li>
                 </ul>
             </div>
             
             <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-icon">
-                    <img src="logov2.ico" alt="Aeropuerto VIP" style="width: 60px; height: 60px;">
+                    <i class="fas fa-plane-departure"></i>
                 </div>
-                <h3>
-                    <img src="logov2.ico" alt="✈️" style="width: 25px; height: 25px;" onerror="this.style.display='none';">
-                    Aeropuerto VIP
-                </h3>
+                <h3><i class="fas fa-plane"></i> Aeropuerto VIP</h3>
                 <p>Traslados premium con monitoreo de vuelos y hasta 60 minutos de espera sin cargo.</p>
                 <ul class="service-features">
-                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Monitoreo en tiempo real</li>
-                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Asistencia con equipaje</li>
-                    <li><img src="logov2.ico" alt="✅" style="width: 18px; height: 18px;" onerror="this.style.display='none';"> Welcome kit</li>
+                    <li><i class="fas fa-check-circle"></i> Monitoreo en tiempo real</li>
+                    <li><i class="fas fa-check-circle"></i> Asistencia con equipaje</li>
+                    <li><i class="fas fa-check-circle"></i> Welcome kit</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- CONDUCTORES ELITE CON TU LOGO -->
+    <!-- ===== CONDUCTORES - SOLO EMOJIS, SIN LOGO ===== -->
     <section id="conductores" class="drivers">
         <div class="section-header" data-aos="fade-up">
             <h2>
-                <img src="logov2.ico" alt="👥" style="width: 50px; height: 50px;" onerror="this.style.display='none';">
+                <i class="fas fa-users"></i>
                 Conductores <span>Elite</span>
             </h2>
             <p>Los mejores profesionales, los vehículos más exclusivos</p>
@@ -947,7 +929,7 @@
         <div class="drivers-showcase">
             <div class="driver-card" data-aos="zoom-in" data-aos-delay="100">
                 <div class="driver-avatar">
-                    <img src="logov2.ico" alt="Alejandro Martínez">
+                    <i class="fas fa-user-tie"></i>
                 </div>
                 <h3>Alejandro Martínez</h3>
                 <div class="driver-rating">
@@ -970,7 +952,7 @@
             
             <div class="driver-card" data-aos="zoom-in" data-aos-delay="200">
                 <div class="driver-avatar">
-                    <img src="logov2.ico" alt="Carolina Rivas">
+                    <i class="fas fa-user-graduate"></i>
                 </div>
                 <h3>Carolina Rivas</h3>
                 <div class="driver-rating">
@@ -993,7 +975,7 @@
             
             <div class="driver-card" data-aos="zoom-in" data-aos-delay="300">
                 <div class="driver-avatar">
-                    <img src="logov2.ico" alt="Roberto Sánchez">
+                    <i class="fas fa-user-ninja"></i>
                 </div>
                 <h3>Roberto Sánchez</h3>
                 <div class="driver-rating">
@@ -1016,11 +998,11 @@
         </div>
     </section>
 
-    <!-- CALCULADORA CON TU LOGO -->
+    <!-- ===== CALCULADORA - SOLO EMOJIS, SIN LOGO ===== -->
     <section id="viajes" class="trips">
         <div class="section-header" data-aos="fade-up">
             <h2>
-                <img src="logov2.ico" alt="📍" style="width: 50px; height: 50px;" onerror="this.style.display='none';">
+                <i class="fas fa-route"></i>
                 Calculadora <span>Black</span>
             </h2>
             <p>Presupuesto instantáneo para tu viaje</p>
@@ -1028,35 +1010,35 @@
         
         <div class="trip-calculator" data-aos="flip-up">
             <div class="calculator-title">
-                <img src="logov2.ico" alt="🧮" style="width: 40px; height: 40px;">
+                <i class="fas fa-calculator"></i>
                 <h3>Simulador de Costos</h3>
             </div>
             
             <div class="calculator-grid">
                 <div class="input-group">
                     <label>
-                        <img src="logov2.ico" alt="📍" style="width: 18px; height: 18px;">
+                        <i class="fas fa-map-pin"></i>
                         Origen
                     </label>
                     <input type="text" id="origen" placeholder="Tu ubicación">
                 </div>
                 <div class="input-group">
                     <label>
-                        <img src="logov2.ico" alt="📍" style="width: 18px; height: 18px;">
+                        <i class="fas fa-map-marker-alt"></i>
                         Destino
                     </label>
                     <input type="text" id="destino" placeholder="¿A dónde vas?">
                 </div>
                 <div class="input-group">
                     <label>
-                        <img src="logov2.ico" alt="📏" style="width: 18px; height: 18px;">
+                        <i class="fas fa-route"></i>
                         Distancia (km)
                     </label>
                     <input type="number" id="distancia" placeholder="0.0" step="0.1">
                 </div>
                 <div class="input-group">
                     <label>
-                        <img src="logov2.ico" alt="🚗" style="width: 18px; height: 18px;">
+                        <i class="fas fa-car"></i>
                         Categoría
                     </label>
                     <select id="tipo-vehiculo">
@@ -1069,12 +1051,11 @@
             </div>
             
             <button class="btn-3d" onclick="calcularViaje()" style="width: 100%; padding: 1rem;">
-                <img src="logov2.ico" alt="🧮" style="width: 20px; height: 20px; margin-right: 8px; filter: brightness(0);" onerror="this.style.display='none';">
-                Calcular Costo
+                <i class="fas fa-calculator"></i> Calcular Costo
             </button>
             
             <div class="result-box" id="resultado-viaje">
-                <img src="logov2.ico" alt="💰" style="width: 40px; height: 40px;">
+                <i class="fas fa-tag"></i>
                 <p style="color: var(--blanco); margin-bottom: 0.5rem;">Costo estimado del viaje</p>
                 <div class="result-price" id="precio-viaje">$0.00</div>
                 <p style="color: var(--gris-claro); font-size: 0.9rem;">*Tarifa base + $5.00/km</p>
@@ -1082,11 +1063,11 @@
         </div>
     </section>
 
-    <!-- CONTACTO CON TU LOGO -->
+    <!-- ===== CONTACTO - CON LOGO OFICIAL ===== -->
     <section id="contacto" class="contact">
         <div class="section-header" data-aos="fade-up">
             <h2>
-                <img src="logov2.ico" alt="📞" style="width: 50px; height: 50px;" onerror="this.style.display='none';">
+                <i class="fas fa-headset"></i>
                 Contacto <span>Premium</span>
             </h2>
             <p>Atención personalizada 24/7</p>
@@ -1095,14 +1076,14 @@
         <div class="contact-container">
             <div class="contact-info" data-aos="fade-right">
                 <h3>
-                    <img src="logov2.ico" alt="ℹ️" style="width: 35px; height: 35px;">
+                    <img src="logov2.ico" alt="DevoDriver" onerror="this.src='logov2.png'; this.onerror=null;">
                     Información de Contacto
                 </h3>
                 <p style="color: var(--gris-claro); margin-bottom: 2rem;">Estamos aquí para atenderte</p>
                 
                 <div class="contact-details">
                     <div class="contact-item">
-                        <img src="logov2.ico" alt="📞">
+                        <img src="logov2.ico" alt="Teléfono" onerror="this.src='logov2.png'; this.onerror=null;">
                         <div>
                             <h4>Teléfono Elite</h4>
                             <p>+52 561 683 3065</p>
@@ -1110,7 +1091,7 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <img src="logov2.ico" alt="📧">
+                        <img src="logov2.ico" alt="Email" onerror="this.src='logov2.png'; this.onerror=null;">
                         <div>
                             <h4>Email</h4>
                             <p>hello@devodriver.com</p>
@@ -1118,11 +1099,11 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <img src="logov2.ico" alt="📍">
+                        <img src="logov2.ico" alt="Ubicación" onerror="this.src='logov2.png'; this.onerror=null;">
                         <div>
                             <h4>Oficina Central</h4>
-                            <p>Anatole France 77, Polanco, Polanco I Secc, Miguel Hidalgo</p>
-                            <p>11540 Ciudad de México, CDMX</p>
+                            <p>Av. Tecnológico #123</p>
+                            <p>Mérida, Yucatán · México</p>
                         </div>
                     </div>
                 </div>
@@ -1137,7 +1118,7 @@
             
             <div class="contact-form" data-aos="fade-left">
                 <h3>
-                    <img src="logov2.ico" alt="✉️" style="width: 35px; height: 35px;">
+                    <img src="logov2.ico" alt="DevoDriver" onerror="this.src='logov2.png'; this.onerror=null;">
                     Envíanos un Mensaje
                 </h3>
                 
@@ -1164,19 +1145,18 @@
                 </div>
                 
                 <button class="btn-3d" onclick="enviarContacto()" style="width: 100%;">
-                    <img src="logov2.ico" alt="✈️" style="width: 18px; height: 18px; margin-right: 8px; filter: brightness(0);" onerror="this.style.display='none';">
-                    Enviar Mensaje
+                    <i class="fas fa-paper-plane"></i> Enviar Mensaje
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER CON TU LOGO -->
+    <!-- ===== FOOTER - CON LOGO OFICIAL ===== -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <div class="logo">
-                    <img src="logov2.ico" alt="DevoDriver" style="width: 40px; height: 40px;">
+                    <img src="logov2.ico" alt="DevoDriver" onerror="this.src='logov2.png'; this.onerror=null;">
                     <span>DevoDriver</span>
                 </div>
                 <p style="color: var(--gris-claro); line-height: 1.6; margin-bottom: 1rem;">
@@ -1186,48 +1166,39 @@
             </div>
             
             <div class="footer-section">
-                <h4>
-                    <img src="logov2.ico" alt="👑" style="width: 20px; height: 20px;">
-                    Servicios Black
-                </h4>
+                <h4><i class="fas fa-crown"></i> Servicios Black</h4>
                 <ul>
-                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Viajes Ejecutivos</a></li>
-                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Corporativo</a></li>
-                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Aeropuerto VIP</a></li>
-                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Eventos Especiales</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Viajes Ejecutivos</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Corporativo</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Aeropuerto VIP</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Eventos Especiales</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
-                <h4>
-                    <img src="logov2.ico" alt="👥" style="width: 20px; height: 20px;">
-                    Conductores
-                </h4>
+                <h4><i class="fas fa-users"></i> Conductores</h4>
                 <ul>
-                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Únete al equipo elite</a></li>
-                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Requisitos</a></li>
-                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Beneficios</a></li>
-                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Historias DevoDriver</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Únete al equipo elite</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Requisitos</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Beneficios</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Historias DevoDriver</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
-                <h4>
-                    <img src="logov2.ico" alt="⚖️" style="width: 20px; height: 20px;">
-                    Legal
-                </h4>
+                <h4><i class="fas fa-scale-balanced"></i> Legal</h4>
                 <ul>
-                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Términos y Condiciones</a></li>
-                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Aviso de Privacidad</a></li>
-                    <li><a href="#"><img src="logov2.ico" alt="→" style="width: 14px; height: 14px; margin-right: 5px;" onerror="this.style.display='none';"> Política de Cookies</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Términos y Condiciones</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Aviso de Privacidad</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Política de Cookies</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <img src="logov2.ico" alt="❤️" style="width: 25px; height: 25px;">
-            <p>© 2026 DevoDriver · ISC02CA. Hecho Universidad Ciencias Medicas y Administrativas 2026</p>
-            
+            <img src="logov2.ico" alt="DevoDriver" onerror="this.src='logov2.png'; this.onerror=null;">
+            <p>© 2026 DevoDriver · ISC02CA. Hecho en Mérida, Yucatán.</p>
+            <p style="margin-top: 0.5rem;">Diseñado con <i class="fas fa-heart" style="color: var(--dorado);"></i> para conductores y pasajeros mexicanos</p>
         </div>
     </footer>
 
@@ -1286,7 +1257,7 @@
             const costo = tarifaBase + (parseFloat(distancia) * precioKm);
             document.getElementById('precio-viaje').textContent = `$${costo.toFixed(2)} MXN`;
             
-            
+            // Animación
             const resultBox = document.getElementById('resultado-viaje');
             resultBox.style.transform = 'scale(1.05)';
             resultBox.style.borderColor = '#FFD700';
@@ -1295,7 +1266,7 @@
             }, 200);
         }
         
-        
+        // ========== CONTACTO ==========
         function enviarContacto() {
             const nombre = document.getElementById('nombre-contacto').value;
             const email = document.getElementById('email-contacto').value;
@@ -1308,7 +1279,7 @@
             
             alert('✅ ¡Mensaje enviado con éxito! Te contactaremos en menos de 15 minutos.');
             
-           
+            // Limpiar formulario
             document.getElementById('nombre-contacto').value = '';
             document.getElementById('email-contacto').value = '';
             document.getElementById('telefono-contacto').value = '';
@@ -1328,16 +1299,6 @@
                     });
                 }
             });
-        });
-        
-        // ========== FALLBACK PARA IMÁGENES ==========
-        document.querySelectorAll('img').forEach(img => {
-            img.onerror = function() {
-                this.style.display = 'none';
-                if (this.nextElementSibling && this.nextElementSibling.tagName === 'SPAN') {
-                    this.nextElementSibling.style.display = 'inline';
-                }
-            };
         });
     </script>
 </body>
